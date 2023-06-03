@@ -1,0 +1,217 @@
+.App{
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title{
+  font-size: 2.5rem;
+  color: #eaddff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.emptyResult{
+  font-size: 1.5rem;
+  text-align: center;
+  color: #f2b8b5;
+  text-transform: uppercase;
+}
+
+table.tableStudents{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+table.tableStudents th{
+  background: #21005d;
+  color: #eaddff;
+  padding: 1rem;
+  text-align: center;
+}
+
+table.tableStudents tbody tr:nth-child(odd){
+  background: #cac4d0;
+  color: #21005d;
+  border-radius: 10px;
+  text-align: center;
+}
+
+table.tableStudents tbody tr:nth-child(even){
+  background: #a5a3ac;
+  color: #21005d;
+  border-radius: 10px;
+  text-align: center;
+}
+
+table.tableStudents tbody tr:hover{
+  filter: brightness(1.2);
+}
+
+table.tableStudents tbody tr td{
+  padding: 10px;
+}
+
+table.tableStudents tbody tr td button{
+  padding: .5rem 1rem;
+  width: 80%;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+table.tableStudents tbody tr td .button--activo{
+  background: #21005d;
+  color: #eaddff;
+  transition: all .3s ease;
+}
+
+table.tableStudents tbody tr td .button--activo:hover{
+  background: #eaddff;
+  color: #21005d;
+}
+
+table.tableStudents tbody tr td .button--inactivo{
+  background: #8c1d18;
+  color: #f2b8b5;
+  transition: all .3s ease;
+}
+
+table.tableStudents tbody tr td .button--inactivo:hover{
+  background: #f2b8b5;
+  color: #8c1d18;
+}
+
+.StudentSearch{
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.StudentSearch input{
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  outline: none;
+  background: #2b2930;
+  color: #cac4d0;
+}
+
+.StudentSearch label{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #524e5c;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.StudentSearch input:focus ~ label{
+  background: #d0bcff;
+  color: #381e72;
+  border-radius: 50%;
+}
+
+.addButton{
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #21005d;
+  color: #eaddff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .3s ease;
+  border: none;
+}
+
+.addButton:hover{
+  background: #eaddff;
+  color: #21005d;
+}
+
+.copy{
+  position: fixed;
+  bottom: 1.5rem;
+  color: #eaddff;
+  font-size: 1rem;
+}
+
+.copy a{
+  color: #f2b8b5;
+  text-decoration: none;
+}
+
+@media (max-width: 1200px){
+  .App{
+    height: 500px;
+    padding: 0 1rem;
+  }
+
+  .title{
+    font-size: 2rem;
+  }
+
+  .emptyResult{
+    font-size: 1rem;
+  }
+
+  .StudentSearch{
+    width: 100%;
+  }
+
+  .StudentSearch input{
+    padding: 1rem;
+  }
+
+  .StudentSearch label{
+    right: 1rem;
+  }
+
+  .addButton{
+    bottom: 2rem;
+    right: 1rem;
+  }
+
+  table.tableStudents {
+    font-size: 14px;
+    scroll-behavior: auto;
+    overflow: auto;
+  }
+
+  table.tableStudents th{
+    padding: .5rem;
+  }
+
+  table.tableStudents tbody tr td{
+    padding: .5rem;
+  }
+
+  table.tableStudents tbody tr td button{
+    padding: .5rem;
+  }
+
+  .copy{
+    bottom: 1rem;
+    font-size: .8rem;
+  }
+}

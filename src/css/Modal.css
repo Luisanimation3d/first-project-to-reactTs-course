@@ -1,0 +1,209 @@
+.ModalContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: rgba(0, 0, 0, 0.6);
+	top: 0;
+	left: 0;
+}
+
+.modal {
+	background-color: #f3edf7;
+	width: 100%;
+	max-width: 750px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+}
+
+.closeModal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.modalContent{
+    width: 100%;
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formCreate{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formCreate h2{
+    color: #21005d;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.formCreate .inputContainer{
+    width: 100%;
+    position: relative;
+}
+
+.formCreate .inputContainer input{
+    width: 100%;
+    display: flex;
+    padding: 1.5rem 1rem 1rem;
+    border: none;
+    border-bottom: 2px solid #cac4d0;
+    outline: none;
+    position: relative;
+}
+
+.inputContainer input::placeholder{
+    color: transparent;
+}
+
+.inputContainer label{
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: #a5a3ac;
+    pointer-events: none;
+    transition: all .3s ease-in-out;
+}
+
+.inputContainer::before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #21005d;
+    position: absolute;
+    /* bottom: 0; */
+    top: 3.5rem;
+    left: 0;
+    z-index: 999;
+    transition: width .3s ease-in-out;
+}
+
+.inputContainer.hasError::before{
+    background-color: #b3261e;
+}
+
+.inputContainer.hasError label{
+    color: #b3261e;
+}
+
+.inputContainer.hasError .error{
+    color: #b3261e;
+    font-size: .8rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(100%);
+    transition: all .3s ease-in-out;
+}
+
+.inputContainer input:focus ~ label{
+    color: #21005d;
+    font-size: .8rem;
+    top: .8rem;
+}
+
+.inputContainer.hasError input:focus ~ label{
+    color: #b3261e;
+}
+
+.inputContainer:has(input:focus)::before{
+    width: 100%;
+}
+
+.inputContainer input:not(:placeholder-shown):not(:focus) ~ label{
+    font-size: .8rem;
+    top: .8rem;
+}
+
+.formCreate button{
+    width: 80%;
+    padding: .5rem 1rem;
+    border: none;
+    background-color: #d0bcff;
+    color: #21005d;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+.formCreate button:hover{
+    color: #d0bcff;
+    background-color: #21005d;
+}
+
+@media screen and (min-width: 768px){
+    .formCreate{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .formCreate{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .ModalContainer{
+        padding: 0 1rem;
+    }
+
+    .formCreate h2{
+        font-size: 2rem;
+    }
+
+    .formCreate button{
+        width: 100%;
+    }
+
+    .formCreate .inputContainer input{
+        padding: 1rem 1rem 1rem;
+        font-size: .8rem;
+    }
+
+    .formCreate .inputContainer label{
+        font-size: .8rem;
+    }
+
+    .formCreate .inputContainer input:focus ~ label{
+        top: .5rem;
+        font-size: .6rem;
+    }
+
+    .inputContainer input:not(:placeholder-shown):not(:focus) ~ label{
+        top: .5rem;
+        font-size: .6rem;
+    }
+
+    .formCreate .inputContainer::before{
+        top: 2.95rem;
+    }
+
+    .formCreate .inputContainer.hasError .error{
+        font-size: .7rem;
+    }
+
+
+}
