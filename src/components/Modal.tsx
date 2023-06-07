@@ -12,6 +12,7 @@ import '../css/Modal.css';
 // Interface for the ModalContainer component
 interface PropsModalContainer {
     children: JSX.Element | JSX.Element[]; // It's a JSX Element or an array of JSX Elements and it's required
+    setShowModal: (showModal: boolean) => void;	
 }
 
 // Interface for the Modal component
@@ -26,8 +27,8 @@ interface PropsModalContent {
     children: JSX.Element | JSX.Element[]; // It's a JSX Element or an array of JSX Elements and it's required
 }
 
-export const ModalContainer:FC<PropsModalContainer> = ({ children }) => {
-    return <div className='ModalContainer'>{children}</div>;
+export const ModalContainer:FC<PropsModalContainer> = ({ children, setShowModal }) => {
+    return <div className='ModalContainer' onClick={()=>setShowModal(false)}>{children}</div>;
 } 
 
 export const Modal: FC<PropsModal> = ({ students, setStudents, setShowModal }) => {
@@ -74,7 +75,7 @@ export const Modal: FC<PropsModal> = ({ students, setStudents, setShowModal }) =
     }
 
     return (
-		<div className='modal'>
+		<div className='modal' onClick={e=>e.stopPropagation()}>
 			<span className='closeModal' onClick={()=>setShowModal(false)}>
 				<MdOutlineClose />
 			</span>
