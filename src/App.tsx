@@ -96,7 +96,7 @@ function App() {
 				<AiOutlinePlus />
 			</button>
 			{showModal && createPortal(
-				<ModalContainer>
+				<ModalContainer setShowModal={setShowModal}>
 					<Modal
 						students={students}
 						setStudents={setStudents}
